@@ -3,19 +3,28 @@
     <meta charset="utf-8">
     <title>Chronologie</title>
     <link rel="stylesheet" href="style.css">
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">  
 </head>
 <body>
     <header>
-        <h1>Chronologie de réalistion du projet Brooklyn</h1>
+        <h1>Récits de réalistion du projet Brooklyn</h1>
     </header>
     <article>
-        <h2>Composition des groupes</h2>
-        <p></p>
-        <h2>Avant la première soutenance</h2>
-        <p></p>
-        <h2>Avant la deuxième soutenance</h2>
-        <p></p>
-        <h2>Fin du projet</h2>
-    </article>
+		<h2>Récit palpitant de la chronologie du projet</h2>
+		<p>Pour le projet du S4, Guillaume et Titouan ce sont regardé, serré la main et s’unirent pour former le groupe Brooklyn. Hamza viendra se joindre à Brooklyn une petite semaine plus tard pour former le trio Brooklyn. Une semaine plus tard nous nous sommes rendu compte que la distance Brooklyn ne voulait rien dire, et qu’il s’agissait en effet de la distance Manhattan. Malgré cet échec catastrophique, nous avons rebondis et avons commencé avec un peu d’avance le projet. Dans notre cahier des charges nous précisions que notre projet consistait a créer un graph représentant une ville et pouvoir le parcourir pour trouver le plus court chemin entre deux lieux, a la Google Maps, puis d’avoir une interface graphique qui affiche le trajet le plus court obtenu.</p>
+        <p>Dès la première soutenance nous avions le graph, un parcours du graph avec Dijsktra et un affichage sur le terminal. Nous avions plutôt pas mal d’avance par rapport au cahier des charges. Avec Loïc, le grand vizir suprême, nous avons cherché des manières de complexifier le projet. Conclusion, nous allons générer aléatoirement des graphs représentant des villes, entamé le problème du voyageur de commerce et afficher tout ça sur terminal !</p>
+		<p>Le travail ralenti un peu après la première soutenance, mais Guillaume réussi un algorithme de brute force un peu améliorée pour résoudre le problème du voyageur de commerce, et avait gagné beaucoup de connaissances sur le sujet. Titouan générait tous les transports de manière aléatoire, bien qu’avec des méthodes assez simples pour certains transports. Hamza avait mis en place une fenêtre graphique et nous étions prêt à affronter le grand jury des ASM. </p>
+		<p>Ana toujours souriante, nous a mis à l’aise. Elouan nous a mis en confiance avec ces critiques constructives. Antoine nous a fait peur avec son partage d’expérience en ing1. Conclusion peu attendue pour notre part : Nettoyer votre projet svp, il est vraiment très peu lisible. </p>
+		<p>Donc on a nettoyé, et on a nettoyé, a la brosse à dent. Et on a commenter tout, on fait des branches git, et on a séparer des fichiers et des dossiers, et on a retoucher le git ignore etc… Nous sommes des hommes nouveau, propres, organisés, compétents, et surtout, très humbles.</p>
+		<p>On a pimpé quelques fonctions de génération de graphes, implémenté un algorithme de système fourmique et on peut afficher des graphs sur la fenêtre graphique gtk. Mais bon, on a surtout nettoyé.</p>
+		<p>C’est sympa, c’était un projet cool. On y a passé quelques minutes, plus que 13. On est content du résultat, on sent qu’on est un peu plus à l’aise avec le c, gdb, valgrind, les threads, les pointeurs et les FILE. On a fait plus que ce que l’on avait prévu dans le cahier de charge et on est content du résultat et de notre investissement. Merci pour votre lecture, passez une bonne journée. Bonne escalade grand vizir suprême. </p>
+	</article>
+	<article>
+		<h2>Problèmes rencontrés</h2>
+		<p>Le premier problème notable a sans doute été rencontré par Guillaume lors de l'implémentation du tas de phibonacci. Il est survenu lorsque implémenter une structuer de donné correcte est devenu une nécéssité, en effet l'algorithme de Dijkstra était trop lent en utilisant une simple liste trié. Après quelques recherches, Guillaume s'est orienté vers se qui semblait la meilleur solution, les tas de phibonacci. Cependant il avait sous estimé la difficulté de ce tas et a vite cherché de l'aide en ligne, mais toute la documentation était en c++. Il s'est dit que la traduction serait simple mais pas du tout. Au final par manque de temps il a abandonné cette structure de donné, de plus après avoir continué ses recherches d'alternative il s'est rendu compte que le gain pratique était assez faible par rapport à un simple tas binaire.</p>
+		<p>Le deuxième problème que Guillaume a rencontré été de savoir comment calculer rapidement les plus cours chemin entre toutes les destinations lorsque plusieurs sont donné. En effet si le graph est assez grand, cela prend un temps conciderable de les faire une par une. La solution est venue des TP de programmation et c'était de multi-threaded l'opperation le temps a donc été divisé par 16(sur nos machines en tout cas).</p>
+		<p>Le dernier problème que Guillaume a rencontré été la complexité exponentielle du problème du voyageur de commerce. En effet il souhaitait que le projet puisse fonctionner même avec plusieurs disaines de noeuds et sela aurait pris des année de calcul avec la méthode par force brute, de plus, de pars nos graph beaucoup d'heuristique n'était pas possible. La solution était de changer de type d'algorithme et de sacrifier de la précision pour gagner du temps de calcul. Il s'est donc orrienté vers les algorithmes d'optimisation et en particulier celui du système fourmique. Le résultat est largement satisfaisant, en effet même pour 50 noeuds d'un graph de 1000 par 1000 le programme ne prends que quelques secondes.</p>
+		<p>Pour Titouan, la plus grosse difficulté a été de généré les bus, il a mis en place un algorithme assez complexe. Il avait les problèmes avec les indexages dans le graph avec des size_t, Titouan a mis du temps a ce rappeler que les size_t sont unsigned. Puis quelques problèmes avec les fclose qui affichaient toujours des seg faults, qu’on a jamais réussi a trop comprendre, nous avons même utilisé la fonction wait pour que toutes les taches dans le file ai le temps de s’écrire avant de le fermer, mais il y avait tout de même de problèmes.</p>
+	</article>
     <a href="index.html">Page principale</a>  
 </body>
